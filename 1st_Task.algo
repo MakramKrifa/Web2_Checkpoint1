@@ -1,0 +1,23 @@
+ALGORITHM First_Task
+VAR
+    Nw,Nv,i:INTEGER
+    str:STRING
+    c:CHAR
+BEGIN
+    str:=""
+    Nw:=1
+    Nv:=0
+    Write("Please write a sequence of characters that ends with a point")
+    REPEAT
+        Read(c)
+        str:=str+c
+        IF (c=" ") THEN
+            Nw:=Nw+1
+        END_IF
+        IF (c.toUpperCase() in ['A','E','I','O','U','Y']) THEN
+            Nv:=Nv+1
+        END_IF    
+    UNTIL (c='.')
+    Write("Number of words: ", Nw)
+    Write("Number of vowels: ", Nv)
+END
